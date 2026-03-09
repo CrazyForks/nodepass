@@ -23,7 +23,7 @@ Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md). We are committ
 
 ### Prerequisites
 
-- **Go** 1.25+ (as specified in `go.mod`)
+- **Go** version as specified in `go.mod`
 - **Git** for version control
 - **Docker** (optional, for container-based development and testing)
 - Basic knowledge of TCP/UDP networking concepts
@@ -141,6 +141,7 @@ We follow standard Go conventions with project-specific guidelines:
 
 ### Configuration and CLI
 
+- Use flag parsing for CLI arguments with clear help messages
 - Use URL-based configuration syntax: `scheme://[password@]host:port/target?param=value`
 - Support environment variables for sensitive configuration
 - Provide sensible defaults for all optional parameters
@@ -197,8 +198,7 @@ When adding tests:
 ### Documentation Structure
 
 - `README.md`: Project overview and quick start
-- `docs/en/`: English documentation
-- `docs/zh/`: Chinese documentation
+- `docs`: Detailed documentation
 - Inline code comments for complex logic
 - API documentation for master mode endpoints
 

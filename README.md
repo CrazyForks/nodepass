@@ -52,6 +52,43 @@
   - One-click deployment scripts, easy management.
   - Real-time monitoring, API-instance management, traffic stats.
 
+## Quick Start
+
+- **Start a server** with TCP connection pooling:
+```bash
+nodepass server \
+  --tunnel-port 10101 \
+  --target-addr 127.0.0.1 \
+  --target-port 3000
+```
+
+- **Start a client** for minimal 0-RTT tunneling:
+```bash
+nodepass client \
+  --tunnel-addr server.address \
+  --tunnel-port 10101 \
+  --target-addr 127.0.0.1 \
+  --target-port 3000
+```
+
+- **Enable TLS security** with self-signed certificate:
+```bash
+nodepass server \
+  --tunnel-port 10101 \
+  --target-addr 127.0.0.1 \
+  --target-port 3000 \
+  --tls 1
+```
+
+- **Launch a master** for multi-instance management:
+```bash
+nodepass master \
+  --tunnel-port 10101 \
+  --tls 2 \
+  --crt master.crt \
+  --key master.key
+```
+
 ## Documentation
 
 Explore the complete documentation to learn more about NodePass:
@@ -59,6 +96,7 @@ Explore the complete documentation to learn more about NodePass:
 - [Installation Guide](/docs/installation.md)
 - [Usage Instructions](/docs/usage.md)
 - [Configuration Options](/docs/configuration.md)
+- [CLI Reference](/docs/cli.md)
 - [API Reference](/docs/api.md)
 - [Examples](/docs/examples.md)
 - [How It Works](/docs/how-it-works.md)
@@ -72,13 +110,11 @@ The [NodePassProject](https://github.com/NodePassProject) organization develops 
 
 - **[NodePassDash](https://github.com/NodePassProject/NodePassDash)**: A modern NodePass management interface that provides master management, instance management, traffic statistics, history records, and more.
 
+- **[NodePass-ApplePlatforms](https://github.com/NodePassProject/NodePass-ApplePlatforms)**: A service-oriented iOS/macOS application that offers a native experience for Apple users.
+
 - **[NodePanel](https://github.com/NodePassProject/NodePanel)**: A lightweight frontend panel that provides visual tunnel management, deployable on Vercel or Cloudflare Pages.
 
 - **[npsh](https://github.com/NodePassProject/npsh)**: A collection of one-click scripts that provide simple deployment for API or Dashboard with flexible configuration and management.
-
-- **[NodePass-ApplePlatforms](https://github.com/NodePassProject/NodePass-ApplePlatforms)**: A service-oriented iOS/macOS application that offers a native experience for Apple users.
-
-- **[nodepass-core](https://github.com/NodePassProject/nodepass-core)**: Development branch, featuring previews of new functionalities and performance optimizations, suitable for advanced users and developers.
 
 ## License
 
